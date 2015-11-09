@@ -11,17 +11,12 @@ hum="Humidity"
 
 timearray=( $(date +"%H %M %S") )		## ${timearray[n]}= (hour,n=0),(minutes,n=1),(seconds,n=3)
 
-
-#sensorread= $(sudo ./AdafruitDHT.py 2302 4 >> /home/pi/Grow/DHT22sensorLog.txt)
-## this command reads the DHT22 sensor and appends  the results to the text file DHT22sensorLog.tex.
-
 ########## SCRIPT
 
-
-echo "$temp $now" >> /home/pi/Grow/DHT22sensorLog.txt
+echo "$temp $now $(sudo ./AdafruitDHT.py 22 4)" >> /home/pi/Grow/DHT22sensorLog.txt
 
 echo "the second is ${timearray[2]}"
 
-while [ "${timearray[1]}" -lt 25 ] ; do
-	echo "$(date +"%T")" >> /home/pi/Grow/minutelist.txt
-	
+#while [ "${timearray[1]}" -lt 25 ] ; do
+#	echo "$(date +"%T")" >> /home/pi/Grow/minutelist.txt
+#
