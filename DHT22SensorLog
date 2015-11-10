@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ## A script to record the temperature and humidity measured by a DHT22 sensor.
+## It registers a row of the form "(date,hour,min,sec,temperature(C),humidity(%))"
+
 
 ########## VARIABLES
 
@@ -12,16 +14,9 @@ min=$(date +"%M")
 hour=$(date +"%H")
 sec=$(date +"%S")
 
-hum="Humidity"
-
-timearray=( $(date +"%H %M %S") )		## ${timearray[n]}= (hour,n=0),(minutes,n=1),(seconds,n=3)
-
 ########## SCRIPT
 
 echo "$now $hour $min $sec $(sudo ./AdafruitDHT.py 22 4)" >> registro.txt
 
-echo "the second is ${timearray[2]}"
+echo "the second is $sec"
 
-#while [ "${timearray[1]}" -lt 25 ] ; do
-#	echo "$(date +"%T")" >> /home/pi/Grow/minutelist.txt
-#
