@@ -4,16 +4,21 @@
 
 ########## VARIABLES
 
-temp="Temperature 2"
-now=$(date +"%x %T")
+#temp=${registro.txt::}
+
+now=$(date +"%x")
+
 min=$(date +"%M")
+hour=$(date +"%H")
+sec=$(date +"%S")
+
 hum="Humidity"
 
 timearray=( $(date +"%H %M %S") )		## ${timearray[n]}= (hour,n=0),(minutes,n=1),(seconds,n=3)
 
 ########## SCRIPT
 
-echo "$now $(sudo ./AdafruitDHT.py 22 4)" >> registro.txt
+echo "$now $hour $min $sec $(sudo ./AdafruitDHT.py 22 4)" >> registro.txt
 
 echo "the second is ${timearray[2]}"
 
