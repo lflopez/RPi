@@ -13,7 +13,7 @@ timearray=( $(date +"%H %M %S") )		## ${timearray[n]}= (hour,n=0),(minutes,n=1),
 
 ########## SCRIPT
 
-echo "$temp $now $(sudo ./AdafruitDHT.py 22 4)" >> /home/pi/Grow/DHT22sensorLog.txt
+echo "$now $(sudo ./AdafruitDHT.py 22 4)" >> registro.txt
 
 echo "the second is ${timearray[2]}"
 
