@@ -14,7 +14,7 @@ min=$(date +"%M")
 hour=$(date +"%H")
 sec=$(date +"%S")
 
-timestamp=$(date +"%Y-%m-%d_%H:%M:%S")
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
 
 ########## SCRIPT
 
